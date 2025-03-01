@@ -56,12 +56,11 @@ I begin by logging into Client-1 as mydomain.com\jane_admin to set up Remote Des
 Next, I create multiple additional users within the domain. To do this, I log into DC-1 as jane_admin, open PowerShell_ise as an administrator, and paste the provided script into a new file. Running this script generates multiple user accounts automatically. Once the script finishes executing, I open Active Directory Users and Computers (ADUC) to confirm that the newly created accounts appear under the _EMPLOYEES OU.
 Finally, I test domain authentication by logging into Client-1 using one of the newly created user accounts. I ensure that I enter the correct credentials, keeping in mind the default password assigned in the script. With Active Directory fully deployed, I complete this lab but do not delete the VMs, as they will be used for future labs. If I am done for the day, I stop the VMs in the Azure Portal to prevent unnecessary costs.</p>
 <br />
-</p>
 Group Policy and Managing Accounts 
 <br />
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-
+<p>  
+</p>
 I begin by turning on the DC-1 and Client-1 VMs in the Azure Portal if they are off. Once they are running, I log into DC-1 and select a random user account created in a previous lab. To simulate an account lockout, I attempt to log in with an incorrect password 10 times and observe that the system does not immediately lock the account. To enforce stricter security, I configure Group Policy to lock accounts after 5 failed attempts by navigating to Group Policy Management, editing the Default Domain Policy, and setting the Account Lockout Threshold accordingly. After applying the policy, I attempt to log in again with the same user account 6 times using an incorrect password, confirming that the account is now locked out in Active Directory Users and Computers (ADUC). To resolve this, I manually unlock the account, reset the password, and successfully log in to verify the changes.
 Next, I test enabling and disabling accounts by disabling the same user account in ADUC and attempting to log in with it. As expected, the system displays an error message indicating that the account is disabled. I then re-enable the account and successfully log in again, confirming that the user can access their account once restored. To further analyze authentication activity, I examine event logs on both DC-1 and Client-1, reviewing security-related events such as failed logins and account modifications. This step provides insight into log analysis, a fundamental skill in cybersecurity and security operations. Once the lab is complete, I keep the VMs intact for future labs. However, if I am finished for the day, I stop the VMs in the Azure Portal to reduce costs while preserving the setup.
 
