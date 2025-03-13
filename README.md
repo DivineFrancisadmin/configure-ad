@@ -49,7 +49,7 @@ With Active Directory deployed, I proceed to join Client-1 to the domain mydomai
 Configuring Remote Desktop and Creating Additional Users
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img width="1275" alt="Screenshot 2025-03-12 at 9 50 11 PM" src="https://github.com/user-attachments/assets/dca94be6-a606-480e-9350-948880cf7525" />
 </p>
 <p>
 I begin by logging into Client-1 as mydomain.com\jane_admin to set up Remote Desktop access for non-administrative users. I navigate to System Properties, select Remote Desktop, and configure it to allow Domain Users to connect remotely. This ensures that standard domain users can access Client-1 via Remote Desktop Protocol (RDP). In real-world environments, this configuration is typically managed using Group Policy, allowing changes to be applied across multiple systems at once.
